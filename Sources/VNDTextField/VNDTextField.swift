@@ -55,27 +55,27 @@ public class VNDTextField: UITextField {
     private let button1: UIButton = {
         let title: TitleButton = .buttonOne
         let button = UIButton()
-        button.backgroundColor = Constant.background
+        button.backgroundColor = .gray
         button.setTitle(title.setTitileButton, for: .normal)
-        button.layer.cornerRadius = Constant.BUTTON_CORNER_RADIUS
+        button.layer.cornerRadius = 5.0
         return button
     }()
     
     private let button2: UIButton = {
         let title: TitleButton = .buttonTwo
         let button = UIButton()
-        button.backgroundColor = Constant.background
+        button.backgroundColor = .gray
         button.setTitle(title.setTitileButton, for: .normal)
-        button.layer.cornerRadius = Constant.BUTTON_CORNER_RADIUS
+        button.layer.cornerRadius = 5.0
         return button
     }()
     
     private let button3: UIButton = {
         let title: TitleButton = .buttonThree
         let button = UIButton()
-        button.backgroundColor = Constant.background
+        button.backgroundColor = .gray
         button.setTitle(title.setTitileButton, for: .normal)
-        button.layer.cornerRadius = Constant.BUTTON_CORNER_RADIUS
+        button.layer.cornerRadius = 5.0
         return button
     }()
     
@@ -98,22 +98,25 @@ public class VNDTextField: UITextField {
     /// Set background for buttons
     /// - Parameter backgroudColor: backgroudColor for button
     public func setButtonBackGroundColor(backgroudColor: UIColor) {
-        Constant.background = backgroudColor
+        self.button1.backgroundColor = backgroudColor
+        self.button2.backgroundColor = backgroudColor
+        self.button3.backgroundColor = backgroudColor
         self.buttonNeedDisplay()
     }
     
     /// Set corner Radius for buttons
     /// - Parameter cornerRadius: cornerRadius for buttons
     public func setButtonCornerRadius(cornerRadius: CGFloat) {
-        Constant.BUTTON_CORNER_RADIUS = cornerRadius
+        self.button1.layer.cornerRadius = cornerRadius
+        self.button2.layer.cornerRadius = cornerRadius
+        self.button3.layer.cornerRadius = cornerRadius
         self.buttonNeedDisplay()
     }
     
     /// Set symboy
-    /// - Parameter symbol: symbol eg vnd or VND
-    public func setSymbol(symbol: String) {
-        Constant.SYMBOL = symbol
-        self.buttonNeedDisplay()
+    /// - Parameter symbolUppercase: symbol upcase or not
+    public func setSymbol(symbolUppercase: Bool) {
+        Constant.symbolUppercase = symbolUppercase
     }
     
     private func buttonNeedDisplay() {
@@ -176,7 +179,7 @@ public class VNDTextField: UITextField {
         }
         
         // remove "đ" from text in textfield
-        let charecterDeleted = Constant.SYMBOL
+        let charecterDeleted = Constant.symbolUppercase ? "Đ" : "đ"
         inputText.removeAll(where: { charecterDeleted.contains($0) })
         
         // remove "." from text in textfield
@@ -250,7 +253,7 @@ public class VNDTextField: UITextField {
     /// - Returns: type currency
     private func formatCurrency(_ inputNumber: Int) -> String {
         let formatter = NumberFormatter()
-        formatter.currencySymbol = Constant.SYMBOL
+        formatter.currencySymbol = Constant.symbolUppercase ? "Đ" : "đ"
         formatter.currencyGroupingSeparator = "."
         formatter.locale = Locale(identifier: Constant.PRICE_LOCATION)
         formatter.positiveFormat = "#,##0 ¤"
