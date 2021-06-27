@@ -112,13 +112,7 @@ public class VNDTextField: UITextField {
         self.button3.layer.cornerRadius = cornerRadius
         self.buttonNeedDisplay()
     }
-    
-    /// Set symboy
-    /// - Parameter symbolUppercase: symbol upcase or not
-    public func setSymbol(symbolUppercase: Bool) {
-        Constant.symbolUppercase = symbolUppercase
-    }
-    
+        
     private func buttonNeedDisplay() {
         self.button1.setNeedsDisplay()
         self.button2.setNeedsDisplay()
@@ -179,7 +173,7 @@ public class VNDTextField: UITextField {
         }
         
         // remove "đ" from text in textfield
-        let charecterDeleted = Constant.symbolUppercase ? "Đ" : "đ"
+        let charecterDeleted = "đ"
         inputText.removeAll(where: { charecterDeleted.contains($0) })
         
         // remove "." from text in textfield
@@ -253,7 +247,7 @@ public class VNDTextField: UITextField {
     /// - Returns: type currency
     private func formatCurrency(_ inputNumber: Int) -> String {
         let formatter = NumberFormatter()
-        formatter.currencySymbol = Constant.symbolUppercase ? "Đ" : "đ"
+        formatter.currencySymbol = "đ"
         formatter.currencyGroupingSeparator = "."
         formatter.locale = Locale(identifier: Constant.PRICE_LOCATION)
         formatter.positiveFormat = "#,##0 ¤"

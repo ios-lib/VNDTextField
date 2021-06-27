@@ -9,6 +9,5 @@ import Foundation
 import UIKit
 //uppercase
 struct Constant {
-    static var PRICE_LOCATION = "vn_VN"
-    static var symbolUppercase = false
+    static var PRICE_LOCATION = "vn_VN"   
 }
