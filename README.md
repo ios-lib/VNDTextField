@@ -38,7 +38,7 @@ import VNDTextField
 
 ## Athor
 
-Create by: SunPencil
+Create by:
 
 [SunPencil](https://github.com/SunPencil/)
 
