@@ -18,6 +18,8 @@ Or clone this repository or download it in zip-file. Then you will find source f
 
 ## Usage
 
+Sample here:
+https://github.com/ios-lib/VNDDemo/tree/main
 
 Import VNDTextField and add it programatically to your view or add UITextField in your Storyboard, and then change the custom class to TextField
 
