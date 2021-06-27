@@ -38,13 +38,9 @@ import VNDTextField
 
 ## Athor
 
-Create by:
+Create by:   [SunPencil](https://github.com/SunPencil/)
 
-[SunPencil](https://github.com/SunPencil/)
-
-website: 
-
-[codetoanbug.com](https://codetoanbug.com/)
+website:     [codetoanbug.com](https://codetoanbug.com/)
 
 
 ## License
