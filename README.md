@@ -12,7 +12,7 @@ The numbers that the user enters in the field are automatically formatted to dis
 **Source files**
 
 Add new swift package by link: 
-Xcode -> File -> Swift packages -> Add package Dependency... and pase this link:
+Xcode -> File -> Swift packages -> Add package Dependency... and parse this link:
 
 https://github.com/ios-lib/VNDTextField
 
