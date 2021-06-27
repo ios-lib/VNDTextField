@@ -19,20 +19,34 @@ Or clone this repository or download it in zip-file. Then you will find source f
 ## Usage
 
 
-Import InputTextField and add it programatically to your view or add UITextField in your Storyboard, and then change the custom class to TextField
+Import VNDTextField and add it programatically to your view or add UITextField in your Storyboard, and then change the custom class to TextField
 
-![Alt text](https://github.com/SunPencil/CPTextField/blob/main/ImageDemo/ImportTextField.png "Custom class")
+![Alt text](https://github.com/ios-lib/VNDTextField/blob/main/image/ImportTextField.png "Custom class")
 
 ```swift
-@IBOutlet weak var myTextfield: TextField!
+import VNDTextField
+
+@IBOutlet weak var myTextfield: VNDTextField!
  
  myTextfield.setButtonBackGroundColor(backgroudColor: .darkGray)
  myTextfield.setButtonCornerRadius(cornerRadius: 10)
 ```
 
+## Athor
+
+Create by: SunPencil
+
+[SunPencil](https://github.com/SunPencil/)
+
+website: 
+
+[codetoanbug.com](codetoanbug.com)
+
 
 ## License
 
-InputTextField is released under the MIT license.
+[VNDTextField is released under the MIT license.](https://github.com/git/git-scm.com/blob/main/MIT-LICENSE.txt)
+
+
 
 
