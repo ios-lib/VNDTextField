@@ -4,7 +4,7 @@ The numbers that the user enters in the field are automatically formatted to dis
 
 ## Demo
 
-![Alt text](https://github.com/ios-lib/VNDTextField/blob/main/image/demo.png "Demo") 
+<img src="https://github.com/ios-lib/VNDTextField/blob/main/image/demo.png" width="200">
 
 
 ## Installation
