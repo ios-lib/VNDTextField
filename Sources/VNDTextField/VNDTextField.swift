@@ -168,27 +168,17 @@ public class VNDTextField: UITextField {
     }
     
     @objc private func textDidChange() {
-        guard var inputText = self.text else {
-            return
-        }
-        
-        // remove "đ" from text in textfield
-        let charecterDeleted = "đ"
-        inputText.removeAll(where: { charecterDeleted.contains($0) })
-        
-        // remove "." from text in textfield
-        inputText.removeAll { $0 == "." }
-        
-        // remove space from text in textfield
-        inputText.removeAll { $0 == " " }
-        
-        // format currency text in textfield
-        if let amountString = Int(inputText) {
-            self.text = formatCurrency(amountString)
+        let inputText = getAmount()
+        if let inputText = Int(inputText) {
+            self.text = formatCurrency(inputText)
         }
         
         if let newPosition = self.position(from: self.endOfDocument, offset: -2) {
             self.selectedTextRange = self.textRange(from: newPosition, to: newPosition)
+        }
+        
+        guard let inputText = self.text else {
+            return
         }
         
         if inputText.count > 0 && inputText.count < 4 {
@@ -239,6 +229,26 @@ public class VNDTextField: UITextField {
         default:
             break
         }
+    }
+    
+    /// Get text in texfield convert to int
+    /// - Returns: interger
+    public func getAmount() -> String {
+        guard var inputText = self.text else {
+            return ""
+        }
+        
+        // remove symbol from text in textfield
+        let charecterDeleted = "đ"
+        inputText.removeAll(where: { charecterDeleted.contains($0) })
+        
+        // remove "." from text in textfield
+        inputText.removeAll { $0 == "." }
+        
+        // remove space from text in textfield
+        inputText.removeAll { $0 == " " }
+        
+        return inputText
     }
     
     /// Format input number to string
